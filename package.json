@@ -1,0 +1,10 @@
+{
+  "name": "vite-monorepo-template",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -k -n FRONTEND,BACKEND -c blue,green \"pnpm --filter frontend dev\" \"pnpm --filter backend dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.0"
+  }
+}
