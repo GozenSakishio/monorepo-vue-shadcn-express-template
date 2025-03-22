@@ -39,7 +39,13 @@ vite-monorepo-template/
 - 🎨 TailwindCSS + shadcn/vue preconfigured
 - ✅ ESLint, Prettier, TypeScript strict mode
 
-🚀 Development
+## 🚀 Development
+
+### Frontend
+
+```
+pnpm --filter frontend dev
+```
 
 ### Init Shadcn/vue components
 
@@ -48,6 +54,23 @@ under `packages/frontend/`
 pnpm dlx shadcn-vue@latest add button
 pnpm dlx shadcn-vue@latest add input
 pnpm dlx shadcn-vue@latest add dialog
+```
+
+### Backend
+
+```
+pnpm --filter backend dev
+```
+
+### Build
+
+```
+# Build all packages
+pnpm build
+
+# Build specific package
+pnpm --filter frontend build
+pnpm --filter backend build
 ```
 
 ## 🧭 License
