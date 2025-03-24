@@ -1,13 +1,15 @@
-// packages/backend/src/index.ts
 import express from 'express'
+import userRoutes from './routes/userRoutes.js'
+import { initDb } from './db.js'
 
 const app = express()
-const PORT = process.env.PORT || 3000
+const PORT = 3000
 
-app.get('/api/hello', (req, res) => {
-  res.json({ message: 'Hello from backend!' })
-})
+app.use(express.json())
+app.use('/api/users', userRoutes)
+
+initDb()
 
 app.listen(PORT, () => {
-  console.log(`🚀 Backend listening on http://localhost:${PORT}`)
+  console.log(`✅ Backend running at http://localhost:${PORT}`)
 })
