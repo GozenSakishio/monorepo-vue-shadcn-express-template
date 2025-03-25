@@ -61,6 +61,8 @@ pnpm dlx shadcn-vue@latest add dialog
 ```
 pnpm --filter backend dev
 ```
+> [!caution]
+> sometimes it will lack of `better-sqlite3` binary, you can rebuild it by running `npm rebuild better-sqlite3` under `packages/backend/`
 
 ### Build
 
