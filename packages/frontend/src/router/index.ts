@@ -3,6 +3,7 @@ import WorkView from '../views/WorkView.vue'
 import SandboxView from '@/views/SandboxView.vue'
 import DataView from '@/views/DataView.vue'
 import HomeView from '@/views/HomeView.vue'
+import ProfileView from '@/views/ProfileView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,6 +22,11 @@ const router = createRouter({
       path: '/db',
       name: 'data',
       component: DataView,
+    },
+    {
+      path: '/pf',
+      name: 'profile',
+      component: ProfileView,
     },
     {
       path: '/sb',

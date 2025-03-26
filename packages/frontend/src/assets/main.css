@@ -1,5 +1,6 @@
 /* @import './base.css'; */
 @import 'shadcnvue-theme.css';
+@import 'scrollbar.css';
 
 @tailwind base;
 @tailwind components;
