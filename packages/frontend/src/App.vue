@@ -1,86 +1,33 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { Button } from './components/ui/button';
+import { ScrollArea } from './components/ui/scroll-area'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/sb">Sandbox</RouterLink>
+  <div class="h-screen flex flex-col">
+    <header class="grid bg-accent-foreground w-full place-content-center h-16">
+      <nav class="flex gap-3 items-center">
+        <RouterLink to="/wk"><Button>Work</Button></RouterLink>
+        <RouterLink to="/db"><Button>Data</Button></RouterLink>
+        <RouterLink to="/db"><Button>Profile</Button></RouterLink>
+        <RouterLink to="/sb"><Button>Sandbox</Button></RouterLink>
       </nav>
-    </div>
-  </header>
+    </header>
 
-  <RouterView />
+    <main class="flex-1 bg-background overflow-auto scroll-smooth overscroll-none">
+      <div class="flex items-center justify-center min-h-full">
+        <div class="min-w-[720px] max-w-[1080px]">
+          <RouterView />
+        </div>
+      </div>
+    </main>
+    <footer class="h-10 text-accent bg-accent-foreground grid place-content-center">
+      <p>
+        Monorepo Template 🙀
+      </p>
+    </footer>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>
+<style scoped></style>

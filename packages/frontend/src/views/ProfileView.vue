@@ -1,6 +1,6 @@
 <template>
   <div>
-    This is Home page
+    This is ProfileView
   </div>
 </template>
 
